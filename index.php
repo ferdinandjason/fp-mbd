@@ -1,8 +1,6 @@
 <?php 
 	require_once 'src/Session.php';
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+	require_once 'src/Function.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +10,17 @@
 	<title>MBD</title>
 </head>
 <body>
-	<!-- <?php include('src/RegisterForm.php'); ?> -->
-	<?php include('src/LoginForm.php'); ?>
+	<?php if(!isset($_SESSION['user_id'])): ?>
+		<?php include('src/LoginForm.php'); ?>
+	<?php else :?>
+		Welcome <?php echo $_SESSION['username']; ?>
+	<?php endif; ?>
+
+
+	<form action="src/create_room.php" method="POST">
+		<label for="name"><b>Room Name</b></label>
+		<input type="text" placeholder="Enter Username" name="name" required>
+		<button type="submit">CREATE ROOM</button>
+	</form>
 </body>
 </html>
