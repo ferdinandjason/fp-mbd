@@ -2,7 +2,7 @@
 
 $dbh['host'] = "localhost";
 $dbh['user'] = "root";
-$dbh['pass'] = "Ferd1n4ndasd";
+$dbh['pass'] = "";
 $dbh['name'] = "vkvxweok_mbd_05111640000033";
 
 $db = new mysqli($dbh['host'], $dbh['user'], $dbh['pass'], $dbh['name']);
