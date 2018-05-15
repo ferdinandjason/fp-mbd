@@ -34,8 +34,10 @@
 			<div class="page-container">
 				<img src="images/coc2.png" alt>
 				<div class="button-login">
-					<button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#loginModal">Log In</button>
-					<button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+					<?php if(!isset($_SESSION['user_id'])): ?>
+						<button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#loginModal">Log In</button>
+						<button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
@@ -51,22 +53,7 @@
 			    	</div>
 			   		
 			   		<div class="modal-body">
-			   			<form>
-			   				<div class="form-group">
-			   					<label for="inputemail">Email</label>
-			   					<input type="email" class="form-control" id="inputemail" aria-describedby="emailHelp" placeholder="Enter your email">
-			   				</div>
-
-			   				<div class="form-group">
-			   					<label for="inputpassword">Password</label>
-			   					<input type="password" class="form-control" id="inputpassword" placeholder="Password">
-			   				</div>
-
-			   				<div class="form-check">
-			   					<input type="checkbox" class="form-check-input" id="remembermecheck">
-			   					<label class="form-check-label" for="remembermecheck">Remember Me</label>
-			   				</div>
-						</form>
+			   			<?php include('src/LoginForm.php'); ?>
 			    	</div>
 			      	<div class="modal-footer">
 			        	<button type="button" class="btn btn-primary">Log In</button>
@@ -86,23 +73,7 @@
 			    	</div>
 			   		
 			   		<div class="modal-body">
-			   			<form>
-			   				<div class="form-group">
-			   					<label for="inputusernamesu">Username</label>
-			   					<input type="text" class="form-control" id="inputusernamesu" placeholder="Enter your username">
-			   				</div>
-
-			   				<div class="form-group">
-			   					<label for="inputemailsu">Email</label>
-			   					<input type="email" class="form-control" id="inputemailsu" aria-describedby="emailHelp" placeholder="Enter your email">
-			   				</div>
-
-			   				<div class="form-group">
-			   					<label for="inputpasswordsu">Password</label>
-			   					<input type="password" class="form-control" id="inputpasswordsu" placeholder="Password">
-			   				</div>
-
-						</form>
+			   			<?php include('src/RegisterForm.php'); ?>
 			    	</div>
 			      	<div class="modal-footer">
 			        	<button type="button" class="btn btn-primary">Sign Up</button>
@@ -112,12 +83,6 @@
 		</div>
 
 	</div>
-
-	<?php if(!isset($_SESSION['user_id'])): ?>
-		<?php include('src/LoginForm.php'); ?>
-	<?php else :?>
-		Welcome <?php echo $_SESSION['username']; ?>
-	<?php endif; ?>
 
 	<p> AVAIABLE ROOM </p>
 	<ul>

@@ -1,12 +1,16 @@
 <form action="src/login.php" method="POST">
-	<label for="email"><b>Email</b></label>
-	<input type="text" placeholder="Enter Email" name="email" required>
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
+	</div>
 
-	<label for="password"><b>Password</b></label>
-	<input type="password" placeholder="Enter Password" name="password" required>
-	
-	<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
-	
-	<button type="button">Cancel</button>
-	<button type="submit">Sign Up</button>
-</form> 
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" id="password" placeholder="Password">
+	</div>
+
+	<div class="form-check">
+		<input type="checkbox" class="form-check-input" name="remember">
+		<label class="form-check-label" for="remember">Remember Me</label>
+	</div>
+</form>

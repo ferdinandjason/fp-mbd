@@ -1,18 +1,21 @@
 <form action="src/register.php" method="POST">
-	<label for="username"><b>Username</b></label>
-	<input type="text" placeholder="Enter Username" name="username" required>
+	<div class="form-group">
+		<label for="username">Username</label>
+		<input type="text" class="form-control" name="username" placeholder="Enter your username">
+	</div>
 
-	<label for="email"><b>Email</b></label>
-	<input type="text" placeholder="Enter Email" name="email" required>
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter your email">
+	</div>
 
-	<label for="password"><b>Password</b></label>
-	<input type="password" placeholder="Enter Password" name="password" required>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" name="password" placeholder="Password">
+	</div>
 
-	<label for="password-repeat"><b>Repeat Password</b></label>
-	<input type="password" placeholder="Repeat Password" name="password-repeat" required>
-	
-	<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
-
-	<button type="button">Cancel</button>
-	<button type="submit">Sign Up</button>
-</form> 
+	<div class="form-group">
+		<label for="password-repeat">Re-type Password</label>
+		<input type="password" class="form-control" name="password-repeat" placeholder="Password">
+	</div>
+</form>
